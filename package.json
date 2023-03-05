@@ -1,0 +1,22 @@
+{
+  "name": "my-resume-2",
+  "version": "1.0.0",
+  "description": "Resume portfolio using Test Driven Development",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddielao/my-resume-2.git"
+  },
+  "author": "Eddie Lao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eddielao/my-resume-2/issues"
+  },
+  "homepage": "https://github.com/eddielao/my-resume-2#readme",
+  "devDependencies": {
+    "jest": "^29.4.3"
+  }
+}
