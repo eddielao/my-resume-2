@@ -11,10 +11,23 @@ describe("Header", () => {
         const component = <Header customer={customer} />,
             container = document.createElement("div");
 
-        document.body.appendChild(container);
+        document.body.replaceChildren(container);
         act(() => {
             ReactDOM.createRoot(container).render(component);
         });
         expect(document.body.textContent).toContain('Eddie');
+    });
+
+    it('renders another name', () => {
+        const customer = { firstName: "Amber" };
+        // const component = (<Header customer={customer} />),
+        const component = <Header customer={customer} />,
+            container = document.createElement("div");
+
+        document.body.replaceChildren(container);
+        act(() => {
+            ReactDOM.createRoot(container).render(component);
+        });
+        expect(document.body.textContent).toContain('Amber');
     });
 });
