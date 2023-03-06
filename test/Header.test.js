@@ -6,6 +6,12 @@ import { Header } from '../src/Header';
 
 describe("Header", () => {
     let container;
+    const render = component => {
+        act(() => {
+            ReactDOM.createRoot(container).render(component);
+        });
+    };
+
     beforeEach(() => {
         container = document.createElement("div");
         document.body.replaceChildren(container);
@@ -13,23 +19,16 @@ describe("Header", () => {
 
     it('renders my first name', () => {
         const customer = { firstName: "Eddie" };
-        // const component = (<Header customer={customer} />),
-        const component = <Header customer={customer} />;
 
-        act(() => {
-            ReactDOM.createRoot(container).render(component);
-        });
+        render(<Header customer={customer} />);
 
         expect(document.body.textContent).toContain('Eddie');
     });
 
     it('renders another name', () => {
         const customer = { firstName: "Amber" };
-        const component = <Header customer={customer} />;
 
-        act(() => {
-            ReactDOM.createRoot(container).render(component);
-        });
+        render(<Header customer={customer} />);
 
         expect(document.body.textContent).toContain('Amber');
     });
