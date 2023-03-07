@@ -102,4 +102,13 @@ describe('ExperienceDayView', () => {
 
         expect(document.body.textContent).toContain('United States Air Force');
     });
+
+    it('has a button element in each LI', () => {
+        render(<ExperienceDateView experiences={twoExperiences} />);
+
+        const buttons = document.querySelectorAll('li > button');
+
+        expect(buttons.length).toEqual(2);
+        expect(buttons[0].type).toEqual('button');
+    });
 });

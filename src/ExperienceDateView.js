@@ -22,6 +22,7 @@ export const ExperienceDateView = ({ experiences }) => {
                 {experiences.map(element =>
                     <li key={element.startsAt}>
                         DateIcon: {toMonthYear(element.startsAt)}
+                        <button type='button'></button>
                     </li>
                 )}
             </ol>
