@@ -111,4 +111,13 @@ describe('ExperienceDayView', () => {
         expect(buttons.length).toEqual(2);
         expect(buttons[0].type).toEqual('button');
     });
+
+    it('renders another experience when selected', () => {
+        render(<ExperienceDateView experiences={twoExperiences} />);
+
+        const button = document.querySelectorAll('button')[1];
+        act(() => button.click());
+
+        expect(document.body.textContent).toContain('Vinculums')
+    });
 });
