@@ -2,13 +2,52 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 
+import { Experience } from '../src/Experience';
 import { ExperienceDateView } from '../src/ExperienceDateView';
+
+describe("Experience", () => {
+    let container;
+    const render = component => {
+        act(() => {
+            ReactDOM.createRoot(container).render(component);
+        });
+    };
+
+    beforeEach(() => {
+        container = document.createElement("div");
+        document.body.replaceChildren(container);
+    });
+
+    it('renders company full name', () => {
+        const companyFullName = 'United States Air Force';
+        const experience = { company: { fullName: companyFullName } };
+
+        render(<Experience experience={experience} />);
+
+        expect(document.body.textContent).toContain(companyFullName);
+    });
+
+    it('renders another company full name', () => {
+        const companyFullName = 'Vinculums';
+        const experience = { company: { fullName: companyFullName } };
+
+        render(<Experience experience={experience} />);
+
+        expect(document.body.textContent).toContain(companyFullName);
+    });
+});
 
 describe('ExperienceDayView', () => {
     const yearMonthDate = new Date();
     const twoExperiences = [
-        { startsAt: yearMonthDate.setFullYear(2020, 10) },
-        { startsAt: yearMonthDate.setFullYear(2021, 11) }
+        {
+            startsAt: yearMonthDate.setFullYear(2020, 10),
+            company: { fullName: 'United States Air Force' }
+        },
+        {
+            startsAt: yearMonthDate.setFullYear(2021, 11),
+            company: { fullName: 'Vinculums' }
+        }
     ];
     let container;
     beforeEach(()=> {
@@ -56,5 +95,11 @@ describe('ExperienceDayView', () => {
         expect(document.body.textContent).toContain(
             'There are no experiences.'
         );
+    });
+
+    it('selects the latest experience by default', () => {
+        render(<ExperienceDateView experiences={twoExperiences} />);
+
+        expect(document.body.textContent).toContain('United States Air Force');
     });
 });
