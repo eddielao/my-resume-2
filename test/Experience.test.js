@@ -43,10 +43,18 @@ describe('ExperienceDayView', () => {
     it('renders the month and year of each experience', () => {
         render(<ExperienceDateView experiences={twoExperiences} />);
         const listChildren = document.querySelectorAll('li');
-        
+
         expect(listChildren[0].textContent)
             .toEqual('DateIcon: NOV 2020');
         expect(listChildren[1].textContent)
             .toEqual('DateIcon: DEC 2021');
+    });
+
+    it('initially shows a message saying there are no experiences', () => {
+        render(<ExperienceDateView experiences={ [] } />);
+
+        expect(document.body.textContent).toContain(
+            'There are no experiences.'
+        );
     });
 });

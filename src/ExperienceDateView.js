@@ -17,6 +17,7 @@ export const ExperienceDateView = ({ experiences }) => {
                     </li>
                 )}
             </ol>
+            <p>There are no experiences.</p>
         </div>
     );
 };
