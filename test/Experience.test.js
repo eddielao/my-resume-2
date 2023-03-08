@@ -63,7 +63,7 @@ describe('ExperienceDayView', () => {
     it('renders a div with the right ID', () => {
         render(<ExperienceDateView experiences={ [] } />);
 
-        expect(document.querySelector('div#experienceDayView')).not.toBeNull();
+        expect(document.querySelector('div#experienceDateView')).not.toBeNull();
     });
 
     it('renders an OL element to display experiences', () => {

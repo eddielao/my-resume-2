@@ -4,6 +4,7 @@ import { Experience } from "./Experience";
 
 export const ExperienceDateView = ({ experiences }) => {
 
+    const viewID = 'experienceDateView';
     const latestExperienceIndex = 0;
     const [selectedExperience, setSelectedExperience] = useState(latestExperienceIndex);
     const toMonthYear = startsAt => {
@@ -29,7 +30,7 @@ export const ExperienceDateView = ({ experiences }) => {
         <p>There are no experiences.</p>;
 
     return (
-        <div id="experienceDayView">
+        <div id={viewID}>
             <ol>
                 {experienceList}
             </ol>
