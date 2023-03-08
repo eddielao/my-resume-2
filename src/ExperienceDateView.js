@@ -12,13 +12,13 @@ export const ExperienceDateView = ({ experiences }) => {
     };
 
     const experienceDateView =
-        experiences.length === 0 ?
-        <p>There are no experiences.</p>
+        experiences && experiences.length > 0 ?
+        <Experience experience={experiences[selectedExperience]} />
         :
-        <Experience experience={experiences[selectedExperience]} />;
+        <p>There are no experiences.</p>;
 
-    return (
-        <div id="experienceDayView">
+        return (
+            <div id="experienceDayView">
             <ol>
                 {experiences.map((element, index) =>
                     <li key={element.startsAt}>
