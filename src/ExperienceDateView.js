@@ -31,9 +31,9 @@ export const ExperienceDateView = ({ experiences }) => {
 
     return (
         <div id={viewID}>
-            <ol>
+            <ul>
                 {experienceList}
-            </ol>
+            </ul>
             {experienceDateView}
         </div>
     );

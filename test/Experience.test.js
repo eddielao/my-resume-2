@@ -66,16 +66,16 @@ describe('ExperienceDayView', () => {
         expect(document.querySelector('div#experienceDateView')).not.toBeNull();
     });
 
-    it('renders an OL element to display experiences', () => {
+    it('renders an UL element to display experiences', () => {
         render(<ExperienceDateView experiences={ [] } />);
 
-        const listElement = document.querySelector('ol');
+        const listElement = document.querySelector('ul');
         expect(listElement).not.toBeNull();
     });
 
     it('renders an LI for each experience', () => {
         render(<ExperienceDateView experiences={twoExperiences} />);
-        const listChildren = document.querySelectorAll('ol > li');
+        const listChildren = document.querySelectorAll('ul > li');
         expect(listChildren).toHaveLength(2);
     });
 
