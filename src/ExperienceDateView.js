@@ -17,8 +17,8 @@ export const ExperienceDateView = ({ experiences }) => {
         :
         <p>There are no experiences.</p>;
 
-        return (
-            <div id="experienceDayView">
+    return (
+        <div id="experienceDayView">
             <ol>
                 {experiences.map((element, index) =>
                     <li key={element.startsAt}>
