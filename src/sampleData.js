@@ -1,12 +1,14 @@
 const monthYearDate = new Date();
 
+const inYearMonth = (year, month) => monthYearDate.setFullYear(year, month);
+
 export const sampleExperiences = [
     {
-        startsAt: monthYearDate.setFullYear(2020, 10),
+        startsIn: inYearMonth(2020, 10),
         company: { fullName: 'United States Air Force' }
     },
     {
-        startsAt: monthYearDate.setFullYear(2021, 11),
+        startsIn: inYearMonth(2021, 11),
         company: { fullName: 'Vinculums' }
     }
 ];

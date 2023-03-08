@@ -41,11 +41,11 @@ describe('ExperienceDayView', () => {
     const yearMonthDate = new Date();
     const twoExperiences = [
         {
-            startsAt: yearMonthDate.setFullYear(2020, 10),
+            startsIn: yearMonthDate.setFullYear(2020, 10),
             company: { fullName: 'United States Air Force' }
         },
         {
-            startsAt: yearMonthDate.setFullYear(2021, 11),
+            startsIn: yearMonthDate.setFullYear(2021, 11),
             company: { fullName: 'Vinculums' }
         }
     ];
