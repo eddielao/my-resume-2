@@ -15,7 +15,7 @@ export const ExperienceDateView = ({ experiences }) => {
 
     const experienceList = experiences && experiences.length > 0 ?
         experiences.map((element, index) =>
-            <li key={element.startsIn}>
+            <li key={element.startsIn+element.company.fullName}>
                 <button onClick={() => setSelectedExperience(index)} type='button'>
                     DateIcon: {toMonthYear(element.startsIn)}
                 </button>
