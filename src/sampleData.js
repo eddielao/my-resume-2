@@ -1,22 +1,26 @@
-const monthYearDate = new Date();
+class Company {
+    fullName;
+    shortName;
+    constructor(fullName, shortName=null) {
+        this.fullName = fullName;
+        this.shortName = shortName;
+    }
+}
 
-const inYearMonth = (year, month) => monthYearDate.setFullYear(year, month);
+class Experience {
+    startsIn;
+    company;
+    constructor(year, month, company) {
+        this.startsIn = this.inYearMonth(year, month);
+        this.company = company;
+    }
+
+    inYearMonth (year, month) { return new Date().setFullYear(year, month); }
+};
 
 export const sampleExperiences = [
-    {
-        startsIn: inYearMonth(1999, 11),
-        company: { fullName: 'United States Air Force' }
-    },
-    {
-        startsIn: inYearMonth(2005, 5),
-        company: { fullName: 'Vinculums' }
-    },
-    {
-        startsIn: inYearMonth(2014, 5),
-        company: { fullName: 'Blackwave Telecom' }
-    },
-    {
-        startsIn: inYearMonth(2017, 7),
-        company: { fullName: 'Wells Fargo' }
-    }
+    new Experience(1999, 11, new Company('United States Air Force', 'USAF')),
+    new Experience(2005, 5, new Company('Vinculums')),
+    new Experience(2014, 5, new Company('Blackwave Telecom')),
+    new Experience(2017, 7, new Company('Wells Fargo'))
 ];
