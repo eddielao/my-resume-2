@@ -13,8 +13,8 @@ export const ExperienceDateView = ({ experiences }) => {
     const [selectedExperience, setSelectedExperience] = useState(latestExperienceIndex);
     const toMonthYear = startsIn => {
         const [m, y] = new Date(startsIn).toLocaleDateString('en-US',
-            { year: 'numeric', month: 'short' }).toUpperCase().split(' ');
-        return `${m} ${y}`;
+            { year: '2-digit', month: 'short' }).split(' ');
+        return `${m} '${y}`;
     };
 
     const experienceList = experiences && experiences.length > 0 ?
@@ -35,7 +35,7 @@ export const ExperienceDateView = ({ experiences }) => {
                     onMouseOver={() => setHovered(index)}
                     onMouseLeave={() => setHovered()}
                     type='button'>
-                    {toMonthYear(element.startsIn)}
+                    {hovered === index ? element.title : toMonthYear(element.startsIn)}
                 </button>
             </li>
         )

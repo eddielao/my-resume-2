@@ -73,7 +73,7 @@ describe('ExperienceDayView', () => {
         expect(listElement).not.toBeNull();
     });
 
-    it('renders an LI for each experience', () => {
+    it('renders a LI for each experience', () => {
         render(<ExperienceDateView experiences={twoExperiences} />);
         const listChildren = document.querySelectorAll('ul > li');
         expect(listChildren).toHaveLength(2);
@@ -84,9 +84,9 @@ describe('ExperienceDayView', () => {
         const listChildren = document.querySelectorAll('li');
 
         expect(listChildren[0].textContent)
-            .toEqual('DateIcon: NOV 2020');
+            .toEqual('Nov \'20');
         expect(listChildren[1].textContent)
-            .toEqual('DateIcon: DEC 2021');
+            .toEqual('Dec \'21');
     });
 
     it('initially shows a message saying there are no experiences', () => {
