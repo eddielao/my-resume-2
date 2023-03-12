@@ -4,8 +4,11 @@ import { Experience } from "./Experience";
 
 export const ExperienceDateView = ({ experiences }) => {
 
-    const viewID = 'experienceDateView';
+    const
+        chosenTextColor = '\chosen-text-font',
+        viewID = 'experienceDateView';
     const latestExperienceIndex = 0;
+    const [chosen, setChosen] = useState();
     const [hovered, setHovered] = useState();
     const [selectedExperience, setSelectedExperience] = useState(latestExperienceIndex);
     const toMonthYear = startsIn => {
@@ -18,8 +21,17 @@ export const ExperienceDateView = ({ experiences }) => {
         experiences.map((element, index) =>
             <li key={element.startsIn+element.company.fullName}>
                 <button
-                    onClick={() => setSelectedExperience(index)}
-                    className={`list-group-item list-group-item-action ${hovered === index ? 'active' : ''}`}
+                    onClick={() => {
+                        setChosen(index);
+                        setSelectedExperience(index);
+                    }}
+                    className={
+                        `
+                        ${chosen === index ? chosenTextColor : '' }
+                        list-group-item list-group-item-action
+                        ${hovered === index ? 'active' : ''}
+                        `
+                    }
                     onMouseOver={() => setHovered(index)}
                     onMouseLeave={() => setHovered()}
                     type='button'>
@@ -37,10 +49,12 @@ export const ExperienceDateView = ({ experiences }) => {
 
     return (
         <div className="row" id={viewID}>
-            <ul className="list-group">
+            <ul className="col-1 list-group">
                 {experienceList}
             </ul>
-            {experienceDateView}
+            <div className="col-5">
+                {experienceDateView}
+            </div>
         </div>
     );
 };
