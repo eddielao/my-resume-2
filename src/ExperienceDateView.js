@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 import { Experience } from "./Experience";
+import { Header } from "./Header";
 
 export const ExperienceDateView = ({ experiences }) => {
 
@@ -48,13 +49,16 @@ export const ExperienceDateView = ({ experiences }) => {
         <p>There are no experiences.</p>;
 
     return (
-        <div className="row" id={viewID}>
-            <ul className="col-1 list-group">
-                {experienceList}
-            </ul>
-            <div className="col-5">
-                {experienceDateView}
+        <Fragment>
+            <Header />
+            <div className="row" id={viewID}>
+                <ul className="col-1 list-group">
+                    {experienceList}
+                </ul>
+                <div className="col-5">
+                    {experienceDateView}
+                </div>
             </div>
-        </div>
+        </Fragment>
     );
 };
