@@ -8,7 +8,11 @@ export const Header = () => {
                 <form className='form-inline'>
                     <div className='input-group'>
                         <div className='input-group-prepend'>
-                            <span className='input-group-text'>@</span>
+                            <span className='input-group-text'>
+                                <a href='https://github.com/eddielao' target='_blank'>
+                                    <i className='bi bi-github'></i>
+                                </a>
+                            </span>
                         </div>
                         <input
                             type='text'
