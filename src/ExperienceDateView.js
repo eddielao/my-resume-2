@@ -38,7 +38,7 @@ export const ExperienceDateView = ({ experiences }) => {
                     onMouseLeave={() => setHovered()}
                     type='button'>
                     {hovered === index ?
-                        <span className="small">
+                        <span className="company-logo">
                             {element.title}
                         </span>
                         :
