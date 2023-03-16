@@ -1,10 +1,11 @@
-import React, { Fragment, useState } from "react";
-
+import { Tooltip } from "bootstrap";
+import React, { Fragment, useEffect, useState } from "react";
 import { Experience } from "./Experience";
 import { Header } from "./Header";
 
 export const ExperienceDateView = ({ experiences }) => {
 
+    //#region properties
     const
         chosenTextColor = '\chosen-text-font',
         viewID = 'experienceDateView';
@@ -34,7 +35,7 @@ export const ExperienceDateView = ({ experiences }) => {
                         ${hovered === index ? 'active' : ''}
                         `
                     }
-                    onMouseOver={() => setHovered(index)}
+                    // onMouseOver={() => setHovered(index)}
                     onMouseLeave={() => setHovered()}
                     type='button'>
                     {hovered === index ?
@@ -42,7 +43,9 @@ export const ExperienceDateView = ({ experiences }) => {
                             {element.title}
                         </span>
                         :
-                        <div className="company-logo">
+                        <div className="company-logo"
+                            data-bs-toggle="tooltip"
+                            title={element.title}>
                             {(element.company.logo ?
                                 <img className="company-logo" src={element.company.logo} /> :
                                  keyboard
@@ -59,6 +62,14 @@ export const ExperienceDateView = ({ experiences }) => {
         <Experience experience={experiences[selectedExperience]} />
         :
         <p>There are no experiences.</p>;
+    //#endregion properties
+
+    useEffect(() => {
+        const tooltipTriggerElements = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        for (let i = 0; i < tooltipTriggerElements.length; i++) {
+            new Tooltip(tooltipTriggerElements[i]);
+        };
+    }, []);
 
     return (
         <Fragment>
