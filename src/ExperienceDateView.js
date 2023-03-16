@@ -9,7 +9,7 @@ export const ExperienceDateView = ({ experiences }) => {
     const
         chosenTextColor = '\chosen-text-font',
         viewID = 'experienceDateView';
-    const keyboard = (<h3><i class="bi bi-keyboard"></i></h3>);
+    const keyboard = (<h1><i class="bi bi-keyboard"></i></h1>);
     const latestExperienceIndex = 0;
     const [chosen, setChosen] = useState();
     const [hovered, setHovered] = useState();
@@ -43,7 +43,7 @@ export const ExperienceDateView = ({ experiences }) => {
                             {element.title}
                         </span>
                         :
-                        <div className="company-logo"
+                        <div className="text-center"
                             data-bs-toggle="tooltip"
                             title={element.title}>
                             {(element.company.logo ?
@@ -75,10 +75,10 @@ export const ExperienceDateView = ({ experiences }) => {
         <Fragment>
             <Header />
             <div className="row" id={viewID}>
-                <ul className="col-1 list-group">
+                <ul className="col-2 list-group">
                     {experienceList}
                 </ul>
-                <div className="col-5">
+                <div className="col-10">
                     {experienceDateView}
                 </div>
             </div>
