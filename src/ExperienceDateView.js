@@ -8,6 +8,7 @@ export const ExperienceDateView = ({ experiences }) => {
     const
         chosenTextColor = '\chosen-text-font',
         viewID = 'experienceDateView';
+    const keyboard = (<h3><i class="bi bi-keyboard"></i></h3>);
     const latestExperienceIndex = 0;
     const [chosen, setChosen] = useState();
     const [hovered, setHovered] = useState();
@@ -36,7 +37,18 @@ export const ExperienceDateView = ({ experiences }) => {
                     onMouseOver={() => setHovered(index)}
                     onMouseLeave={() => setHovered()}
                     type='button'>
-                    {hovered === index ? element.title : toMonthYear(element.startsIn)}
+                    {hovered === index ?
+                        <span className="small">
+                            {element.title}
+                        </span>
+                        :
+                        <div className="company-logo">
+                            {(element.company.logo ?
+                                <img className="company-logo" src={element.company.logo} /> :
+                                 keyboard
+                            )}
+                        </div>
+                    }
                 </button>
             </li>
         )
