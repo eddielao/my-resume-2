@@ -10,7 +10,11 @@ export const Header = () => {
                         <div className='input-group-prepend'>
                             <span className='input-group-text'>
                                 <a href='https://github.com/eddielao' target='_blank'>
-                                    <i className='bi bi-github'></i>
+                                    <i
+                                        className='bi bi-github'
+                                        data-bs-toggle='tooltip'
+                                        title='My humble GitHub'
+                                    />
                                 </a>
                             </span>
                         </div>
