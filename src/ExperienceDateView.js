@@ -9,7 +9,7 @@ export const ExperienceDateView = ({ experiences }) => {
     const
         chosenTextColor = '\chosen-text-font',
         viewID = 'experienceDateView';
-    const keyboard = (<h1><i class="bi bi-keyboard"></i></h1>);
+    const keyboard = (<h1><i className="bi bi-keyboard"></i></h1>);
     const latestExperienceIndex = 0;
     const [chosen, setChosen] = useState();
     const [hovered, setHovered] = useState();
