@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { DropdownMenu } from './components/DropdownMenu';
+
 export const Header = () => {
 
     return (
@@ -7,17 +9,7 @@ export const Header = () => {
             <nav className='navbar navbar-light bg-light'>
                 <form className='form-inline'>
                     <div className='input-group'>
-                        <div className='input-group-prepend'>
-                            <span className='input-group-text'>
-                                <a href='https://github.com/eddielao' target='_blank'>
-                                    <i
-                                        className='bi bi-github'
-                                        data-bs-toggle='tooltip'
-                                        title='My humble GitHub'
-                                    />
-                                </a>
-                            </span>
-                        </div>
+                        {/* <DropdownMenu /> */}
                         <input
                             type='text'
                             className='form-control'
