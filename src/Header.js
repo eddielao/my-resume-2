@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { DropdownMenu } from './components/DropdownMenu';
+import { sampleUrlLink } from './sampleData';
 
 export const Header = () => {
 
@@ -9,7 +10,7 @@ export const Header = () => {
             <nav className='navbar navbar-light bg-light'>
                 <form className='form-inline'>
                     <div className='input-group'>
-                        {/* <DropdownMenu /> */}
+                        <DropdownMenu sampleUrlLink={sampleUrlLink} />
                         <input
                             type='text'
                             className='form-control'
