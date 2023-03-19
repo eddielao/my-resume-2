@@ -2,6 +2,7 @@
 @import "../node_modules/bootstrap/scss/functions";
 // Default variable overrides
 // Required
+$enable-caret: false;
 @import "../node_modules/bootstrap/scss/variables";
 // Variable value using existing variable
 // Required
