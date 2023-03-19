@@ -6,8 +6,13 @@ export const DropdownMenu = ({ sampleUrlLink }) => {
     const arrayLength = sampleUrlLink.length ? sampleUrlLink.length : 0;
     const dropdownButton =
         sampleUrlLink.map((element, index) =>
-            <a href={element.url} data-bs-toggle='tooltip' key={index}>
-                <i className={`bi bi-${index}${element.bootstrapIcon} dropdown-item`} data-bs-toggle='tooltip' />
+            <a
+                href={element.url}
+                data-bs-toggle='tooltip'
+                key={index}
+                target='_blank'
+            >
+                <i className={`${element.bootstrapIcon} dropdown-item`} />
             </a>
         );
 
@@ -19,8 +24,9 @@ export const DropdownMenu = ({ sampleUrlLink }) => {
                 data-bs-toggle="dropdown"
                 id="dropdownButton"
                 type="button"
+                title={`Click to see ${arrayLength} other profile links`}
             >
-                <i className={`bi bi-${arrayLength}-circle-fill`}></i>
+                <i className={`bi bi-${arrayLength}-circle-fill`} />
             </button>
             <div className="dropdown-menu" aria-labelledby="dropdownButton">
                 {dropdownButton}

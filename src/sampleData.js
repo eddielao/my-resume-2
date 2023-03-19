@@ -2,7 +2,10 @@ import usaf from './media/usaf.png';
 import vinculums from './media/vinculums.png';
 import wf from './media/wf.png';
 
-const BOOTSTRAP_NUM_ICON = '-circle-fill';
+const
+    BOOTSTRAP_GH_ICON = 'bi bi-github',
+    BOOTSTRAP_LI_ICON = 'bi bi-linkedin',
+    BOOTSTRAP_NUM_ICON = '-circle-fill';
 const
     GITHUB_URL = 'https://github.com/eddielao',
     LINKEDIN_URL = 'https://linkedin.com/in/eddielao';
@@ -50,6 +53,6 @@ export const sampleExperiences = [
 ];
 
 export const sampleUrlLink = [
-    new urlLink(BOOTSTRAP_NUM_ICON, GITHUB_URL),
-    new urlLink(BOOTSTRAP_NUM_ICON, LINKEDIN_URL)
+    new urlLink(BOOTSTRAP_GH_ICON, GITHUB_URL),
+    new urlLink(BOOTSTRAP_LI_ICON, LINKEDIN_URL)
 ];
