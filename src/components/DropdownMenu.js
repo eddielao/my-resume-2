@@ -1,7 +1,17 @@
 import React from 'react';
+import { sampleExperiences } from '../sampleData';
 
-export const DropdownMenu = () => {
+export const DropdownMenu = ({ sampleUrlLink }) => {
 
+    const arrayLength = sampleUrlLink.length ? sampleUrlLink.length : 0;
+    const dropdownButton =
+        sampleUrlLink.map((element, index) =>
+            <a href={element.url} data-bs-toggle='tooltip' key={index}>
+                <i className={`bi bi-${index}${element.bootstrapIcon} dropdown-item`} data-bs-toggle='tooltip' />
+                {console.log(`${index}${element.bootstrapIcon}`)}
+            </a>
+        );
+console.log(dropdownButton)
     return (
         <div className="dropdown">
             <button
@@ -11,12 +21,10 @@ export const DropdownMenu = () => {
                 id="dropdownButton"
                 type="button"
             >
-                Dropdown button
+                <i className={`bi bi-${arrayLength}-circle-fill`}></i>
             </button>
             <div className="dropdown-menu" aria-labelledby="dropdownButton">
-                <a href="#" className="dropdown-item">First item</a>
-                <a href="#" className="dropdown-item">Second item</a>
-                <a href="#" className="dropdown-item">Third item</a>
+                {dropdownButton}
             </div>
         </div>
     );
