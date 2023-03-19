@@ -8,10 +8,9 @@ export const DropdownMenu = ({ sampleUrlLink }) => {
         sampleUrlLink.map((element, index) =>
             <a href={element.url} data-bs-toggle='tooltip' key={index}>
                 <i className={`bi bi-${index}${element.bootstrapIcon} dropdown-item`} data-bs-toggle='tooltip' />
-                {console.log(`${index}${element.bootstrapIcon}`)}
             </a>
         );
-console.log(dropdownButton)
+
     return (
         <div className="dropdown">
             <button
