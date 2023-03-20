@@ -47,7 +47,7 @@ export const ExperienceDateView = ({ experiences }) => {
                             data-bs-toggle="tooltip"
                             title={element.title}>
                             {(element.company.logo ?
-                                <img className="company-logo" src={element.company.logo} /> :
+                                <img className="bg-secondary company-logo" src={element.company.logo} /> :
                                  keyboard
                             )}
                         </div>
