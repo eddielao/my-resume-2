@@ -7,7 +7,7 @@ export const Header = () => {
 
     return (
         <div className='container justify-content-center'>
-            <nav className='navbar navbar-light bg-light'>
+            <nav className='navbar'>
                 <form className='form-inline'>
                     <div className='input-group'>
                         <DropdownMenu sampleUrlLink={sampleUrlLink} />
