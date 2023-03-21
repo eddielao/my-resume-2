@@ -5,6 +5,8 @@ import { sampleUrlLink } from './sampleData';
 
 export const Header = () => {
 
+    const resetInput = e => e.target.value = 'Eddie Lao';
+
     return (
         <div className='container justify-content-center'>
             <nav className='navbar'>
@@ -19,7 +21,7 @@ export const Header = () => {
                                 aria-label='CandidateName'
                                 className='form-control'
                                 data-bs-toggle='tooltip'
-                                
+                                onChange={resetInput}
                                 placeholder='Eddie Lao'
                                 title='Click to contact me'
                                 type='text'
