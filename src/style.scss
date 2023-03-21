@@ -4,6 +4,15 @@
 // Required
 $enable-caret: false;
 $enable-gradients: true;
+// Specify breakpoint sizes
+$grid-breakpoints: (
+    xs: 0,
+    sm: 300px,
+    md: 600px,
+    lg: 900px,
+    xl: 1200px,
+    xxl: 1500px
+);
 @import "../node_modules/bootstrap/scss/variables";
 // Variable value using existing variable
 // Required
