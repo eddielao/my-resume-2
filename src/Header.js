@@ -11,22 +11,29 @@ export const Header = () => {
         <div className='container justify-content-center'>
             <nav className='navbar'>
                 <form className='form-inline'>
-                    <div className='input-group'>
+                    <div className='input-group mb-3'>
                         <DropdownMenu sampleUrlLink={sampleUrlLink} />
-                        <a
-                            href='https://forms.gle/xyphXMDzDaV3Ew5L8'
-                            target='_blank'
-                        >
-                            <input
-                                aria-label='CandidateName'
-                                className='form-control'
-                                data-bs-toggle='tooltip'
-                                onChange={resetInput}
-                                placeholder='Eddie Lao'
-                                title='Click to contact me'
-                                type='text'
-                            />
-                        </a>
+                        <input
+                            aria-label='CandidateName'
+                            className='form-control'
+                            onChange={resetInput}
+                            placeholder='Eddie Lao'
+                            type='text'
+                        />
+                            <div className='input-group-append'>
+                            <a
+                                href='https://forms.gle/xyphXMDzDaV3Ew5L8'
+                                target='_blank'
+                            >
+                                <span
+                                    className='input-group-text'
+                                    data-bs-toggle='tooltip'
+                                    title='Click to contact me'
+                                >
+                                    <i className='bi bi-hand-index-thumb-fill' />
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </form>
             </nav>
