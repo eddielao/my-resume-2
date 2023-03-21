@@ -22,7 +22,10 @@ export const ExperienceDateView = ({ experiences }) => {
 
     const experienceList = experiences && experiences.length > 0 ?
         experiences.map((element, index) =>
-            <li key={element.startsIn+element.company.fullName}>
+            <li
+                className='no-bullet'
+                key={element.startsIn+element.company.fullName}
+            >
                 <button
                     onClick={() => {
                         setChosen(index);
