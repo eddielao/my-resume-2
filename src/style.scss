@@ -59,3 +59,12 @@ $chosen-text: rgb(216, 215, 215);
     width: 50%;
     border-radius: 50%;
 }
+
+.content {
+    margin: auto;
+    max-width: max-content;
+}
+
+.no-bullet {
+    list-style-type: none;
+}
