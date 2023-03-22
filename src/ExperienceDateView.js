@@ -78,10 +78,10 @@ export const ExperienceDateView = ({ experiences }) => {
         <Fragment>
             <Header />
             <div className="row" id={viewID}>
-                <ul className="col-2 list-group">
+                <ul className="col-6 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2 list-group">
                     {experienceList}
                 </ul>
-                <div className="col-10">
+                <div className="col-6 col-sm-8 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
                     {experienceDateView}
                 </div>
             </div>

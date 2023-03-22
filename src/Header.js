@@ -16,7 +16,7 @@ export const Header = () => {
                         <input
                             aria-label='CandidateName'
                             className='form-control'
-                            onChange={resetInput}
+                            onBlur={resetInput}
                             placeholder='Eddie Lao'
                             type='text'
                         />
