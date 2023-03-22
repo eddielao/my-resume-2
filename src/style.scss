@@ -4,6 +4,14 @@
 // Required
 $enable-caret: false;
 $enable-gradients: true;
+// Specify container maximum widths
+$container-max-widths: (
+    sm: 300px,
+    md: 500px,
+    lg: 700px,
+    xl: 900px,
+    xxl: 1100px
+);
 // Specify breakpoint sizes
 $grid-breakpoints: (
     xs: 0,
