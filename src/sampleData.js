@@ -28,12 +28,10 @@ class Experience {
     company = new Company();
     accomplishment = [];
     constructor(year, month, company, title) {
-        this.startsIn = this.inYearMonth(year, month);
+        this.startsIn = [year, month];
         this.company = company;
         this.title = title;
     }
-
-    inYearMonth (year, month) { return new Date().setFullYear(year, month); }
 };
 
 class urlLink {
@@ -46,10 +44,10 @@ class urlLink {
 }
 
 export const sampleExperiences = [
-    new Experience(1999, 11, new Company('United States Air Force', 'USAF', usaf), 'Programming Specialist'),
-    new Experience(2005, 5, new Company('Vinculums', 'V', vinculums), 'Database Engineer'),
-    new Experience(2014, 5, new Company('Blackwave Telecom', 'BW'), 'Database Engineer'),
-    new Experience(2017, 7, new Company('Wells Fargo', 'WF', wf), 'Software Engineer')
+    new Experience(1999, 'Nov', new Company('United States Air Force', 'USAF', usaf), 'Programming Specialist'),
+    new Experience(2005, 'May', new Company('Vinculums', 'V', vinculums), 'Database Engineer'),
+    new Experience(2014, 'May', new Company('Blackwave Telecom', 'BW'), 'Database Engineer'),
+    new Experience(2017, "Jul", new Company('Wells Fargo', 'WF', wf), 'Software Engineer')
 ];
 
 export const sampleUrlLink = [

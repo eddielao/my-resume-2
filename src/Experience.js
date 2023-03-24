@@ -6,4 +6,7 @@ export const Experience = ({ experience }) =>
         <div className='card-text'>
             {experience.company.fullName}
         </div>
+        <div className='card-footer'>
+            &gt; { experience.startsIn[1] } { experience.startsIn[0] }
+        </div>
     </div>;
