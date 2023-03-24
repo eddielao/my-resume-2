@@ -1,3 +1,4 @@
+import bw from './media/blackwave.png';
 import usaf from './media/usaf.png';
 import vinculums from './media/vinculums.png';
 import wf from './media/wf.png';
@@ -46,7 +47,7 @@ class urlLink {
 export const sampleExperiences = [
     new Experience(1999, 'Nov', new Company('United States Air Force', 'USAF', usaf), 'Programming Specialist'),
     new Experience(2005, 'May', new Company('Vinculums', 'V', vinculums), 'Database Engineer'),
-    new Experience(2014, 'May', new Company('Blackwave Telecom', 'BW'), 'Database Engineer'),
+    new Experience(2014, 'May', new Company('Blackwave Telecom', 'BW', bw), 'Database Engineer'),
     new Experience(2017, "Jul", new Company('Wells Fargo', 'WF', wf), 'Software Engineer')
 ];
 
