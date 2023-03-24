@@ -1,9 +1,9 @@
 import React from 'react';
 
 export const Experience = ({ experience }) =>
-    <div className='card'>
-        <h3>{experience.title}</h3>
-        <div className='card-body'>
+    <div className='card-body'>
+        <h4 className='card-title'>{experience.title}</h4>
+        <div className='card-text'>
             {experience.company.fullName}
         </div>
     </div>;
