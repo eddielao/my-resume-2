@@ -40,7 +40,8 @@ export const ExperienceDateView = ({ experiences }) => {
                     }
                     // onMouseOver={() => setHovered(index)}
                     onMouseLeave={() => setHovered()}
-                    type='button'>
+                    type='button'
+                >
                     {hovered === index ?
                         <span className="company-logo">
                             {element.title}

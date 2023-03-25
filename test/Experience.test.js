@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { act, screen } from 'react-dom/test-utils';
+import { act } from 'react-dom/test-utils';
 
 import { Experience } from '../src/Experience';
 import { ExperienceDateView } from '../src/ExperienceDateView';
@@ -117,7 +117,7 @@ describe('ExperienceDayView', () => {
     it('renders another experience when selected', () => {
         render(<ExperienceDateView experiences={twoExperiences} />);
 
-        const button = document.querySelectorAll('button')[1];
+        const button = document.querySelectorAll('button[class*="list-group-item"]')[1];
         act(() => button.click());
 
         expect(document.body.textContent).toContain('Vinculums')
