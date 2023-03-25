@@ -20,9 +20,12 @@ describe("Experience", () => {
 
     it('renders company full name', () => {
         const companyFullName = 'United States Air Force';
-        const experience = { company: { fullName: companyFullName } };
+        const experienceMock = {
+            company: { fullName: companyFullName },
+            startsIn: [1999, 'Dec']
+        };
 
-        render(<Experience experience={experience} />);
+        render(<Experience experience={experienceMock} />);
 
         expect(document.body.textContent).toContain(companyFullName);
     });
