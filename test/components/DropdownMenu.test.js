@@ -19,11 +19,11 @@ describe('DropdownMenu component', () => {
     };
 
     it('renders 0 circle fill icon when prop sample URL link has 0 length', () => {
-        const sampleUrlLinkMock = [];
+        const emptySampleUrlLinkMock = [];
 
-        render(<DropdownMenu sampleUrlLink={sampleUrlLinkMock} />);
+        render(<DropdownMenu sampleUrlLink={emptySampleUrlLinkMock} />);
         const BSIcon = document.querySelector('i[class*="bi-0-circle-fill"]');
-        console.log(BSIcon)
-        expect(BSIcon).toBeDefined();
+
+        expect(BSIcon).toBeTruthy();
     });
 });
