@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { act } from 'react-dom/test-utils';
+import { act, screen } from 'react-dom/test-utils';
 
 import { Experience } from '../src/Experience';
 import { ExperienceDateView } from '../src/ExperienceDateView';
@@ -11,6 +11,11 @@ describe("Experience", () => {
         act(() => {
             ReactDOM.createRoot(container).render(component);
         });
+    };
+    const companyFullName = 'Vinculums';
+    const experienceMock = {
+        company: { fullName: companyFullName },
+        startsIn: [2005, 'Jun']
     };
 
     beforeEach(() => {
@@ -31,15 +36,16 @@ describe("Experience", () => {
     });
 
     it('renders another company full name', () => {
-        const companyFullName = 'Vinculums';
-        const experienceMock = {
-            company: { fullName: companyFullName },
-            startsIn: [2005, 'Jun']
-        };
-
         render(<Experience experience={experienceMock} />);
 
         expect(document.body.textContent).toContain(companyFullName);
+    });
+
+    it('renders the month and year of each experience', () => {
+
+        render(<Experience experience={experienceMock} />);
+
+        expect(document.body.textContent).toContain('Jun 2005');
     });
 });
 
@@ -47,11 +53,11 @@ describe('ExperienceDayView', () => {
     const yearMonthDate = new Date();
     const twoExperiences = [
         {
-            startsIn: yearMonthDate.setFullYear(2020, 10),
+            startsIn: [2020, 'Oct'],
             company: { fullName: 'United States Air Force' }
         },
         {
-            startsIn: yearMonthDate.setFullYear(2021, 11),
+            startsIn: [2021, 'Nov'],
             company: { fullName: 'Vinculums' }
         }
     ];
@@ -83,16 +89,6 @@ describe('ExperienceDayView', () => {
         render(<ExperienceDateView experiences={twoExperiences} />);
         const listChildren = document.querySelectorAll('ul > li');
         expect(listChildren).toHaveLength(2);
-    });
-
-    it('renders the month and year of each experience', () => {
-        render(<ExperienceDateView experiences={twoExperiences} />);
-        const listChildren = document.querySelectorAll('li');
-
-        expect(listChildren[0].textContent)
-            .toEqual('Nov \'20');
-        expect(listChildren[1].textContent)
-            .toEqual('Dec \'21');
     });
 
     it('initially shows a message saying there are no experiences', () => {
