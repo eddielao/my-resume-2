@@ -38,10 +38,13 @@
     "sass": "^1.59.2"
   },
   "jest": {
-    "testEnvironment": "jsdom",
     "globals": {
       "IS_REACT_ACT_ENVIRONMENT": true
-    }
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|png)$": "<rootDir>/mocks/fileMock.js"
+    },
+    "testEnvironment": "jsdom"
   },
   "browserslist": {
     "production": [
