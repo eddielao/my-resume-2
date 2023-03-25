@@ -14,11 +14,6 @@ export const ExperienceDateView = ({ experiences }) => {
     const [chosen, setChosen] = useState();
     const [hovered, setHovered] = useState();
     const [selectedExperience, setSelectedExperience] = useState(latestExperienceIndex);
-    const toMonthYear = startsIn => {
-        const [m, y] = new Date(startsIn).toLocaleDateString('en-US',
-            { year: '2-digit', month: 'short' }).split(' ');
-        return `${m} '${y}`;
-    };
 
     const experienceList = experiences && experiences.length > 0 ?
         experiences.map((element, index) =>
