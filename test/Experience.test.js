@@ -133,10 +133,13 @@ describe('ExperienceDayView', () => {
         act(() => Simulate.mouseOver(buttons[0]));
 
         const activeButton = document.querySelector('button[class="list-group-item list-group-item-action active"]');
-        console.log(activeButton)
+
         expect(activeButton).toBeTruthy();
+        expect(activeButton.className).toMatch(/active$/);
 
         act(() => Simulate.mouseLeave(buttons[0]));
+
         expect(activeButton.className).not.toContain('active');
+        expect(activeButton.className).not.toMatch(/active$/);
     });
 });
