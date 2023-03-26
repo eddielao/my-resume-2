@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { act } from 'react-dom/test-utils';
+import { act, Simulate } from 'react-dom/test-utils';
 
 import { Experience } from '../src/Experience';
 import { ExperienceDateView } from '../src/ExperienceDateView';
@@ -54,7 +54,10 @@ describe('ExperienceDayView', () => {
     const twoExperiences = [
         {
             startsIn: [2020, 'Oct'],
-            company: { fullName: 'United States Air Force' }
+            company: {
+                fullName: 'United States Air Force',
+                logo: null
+            }
         },
         {
             startsIn: [2021, 'Nov'],
@@ -121,5 +124,19 @@ describe('ExperienceDayView', () => {
         act(() => button.click());
 
         expect(document.body.textContent).toContain('Vinculums')
+    });
+
+    it('activates boostrap list group item active class when mouse over', async () => {
+        render(<ExperienceDateView experiences={twoExperiences} />);
+
+        const buttons = document.querySelectorAll('li > button');
+        act(() => Simulate.mouseOver(buttons[0]));
+
+        const activeButton = document.querySelector('button[class="list-group-item list-group-item-action active"]');
+        console.log(activeButton)
+        expect(activeButton).toBeTruthy();
+
+        act(() => Simulate.mouseLeave(buttons[0]));
+        expect(activeButton.className).not.toContain('active');
     });
 });
