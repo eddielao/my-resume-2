@@ -5,6 +5,7 @@ import { sampleUrlLink } from './sampleData';
 
 export const Header = () => {
 
+    const GOOGLE_FORM_URL = 'https://forms.gle/xyphXMDzDaV3Ew5L8';
     const resetInput = e => e.target.value = 'Eddie Lao';
 
     return (
@@ -22,7 +23,7 @@ export const Header = () => {
                         />
                             <div className='input-group-append'>
                             <a
-                                href='https://forms.gle/xyphXMDzDaV3Ew5L8'
+                                href={GOOGLE_FORM_URL}
                                 target='_blank'
                             >
                                 <span
