@@ -27,14 +27,27 @@ describe('DropdownMenu component', () => {
     ];
 
     it('renders correct numbered circle fill icon when prop sample URL link has 0 length', () => {
-        const
-            emptySampleUrlLinkMock = [],
-            threeSampleUrlLinkMock = [sampleUrlLinkMock[0], sampleUrlLinkMock[1], sampleUrlLinkMock[2]],
-            fiveSampleUrlLinkMock = [sampleUrlLinkMock[0], sampleUrlLinkMock[1], sampleUrlLinkMock[2],
-                sampleUrlLinkMock[3], sampleUrlLinkMock[4]];
+        const emptySampleUrlLinkMock = [];
 
         render(<DropdownMenu sampleUrlLink={emptySampleUrlLinkMock} />);
         const BSIcon = document.querySelector('button > i');
         expect(BSIcon.className).toContain('bi-0-circle-fill');
+    });
+
+    it('renders 3 numbered circle fill icons when prop sample URL link has 3 length', () => {
+        const threeSampleUrlLinkMock = [sampleUrlLinkMock[0], sampleUrlLinkMock[1], sampleUrlLinkMock[2]];
+
+        render(<DropdownMenu sampleUrlLink={threeSampleUrlLinkMock} />);
+        const BSIcon = document.querySelector('button > i');
+        expect(BSIcon.className).toContain('bi-3-circle-fill');
+    });
+
+    it('renders 5 numbered circle fill icons when prop sample URL link has 5 length', () => {
+        const fiveSampleUrlLinkMock = [sampleUrlLinkMock[0], sampleUrlLinkMock[1], sampleUrlLinkMock[2],
+        sampleUrlLinkMock[3], sampleUrlLinkMock[4]];
+
+        render(<DropdownMenu sampleUrlLink={fiveSampleUrlLinkMock} />);
+        const BSIcon = document.querySelector('button > i');
+        expect(BSIcon.className).toContain('bi-5-circle-fill');
     });
 });
