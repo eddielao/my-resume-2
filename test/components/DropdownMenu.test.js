@@ -18,12 +18,36 @@ describe('DropdownMenu component', () => {
         })
     };
 
-    it('renders 0 circle fill icon when prop sample URL link has 0 length', () => {
+    const sampleUrlLinkMock = [
+        { bootStrapIcon: 'mockIcon1', url: 'mockUrl1' },
+        { bootStrapIcon: 'mockIcon2', url: 'mockUrl2' },
+        { bootStrapIcon: 'mockIcon3', url: 'mockUrl3' },
+        { bootStrapIcon: 'mockIcon4', url: 'mockUrl4' },
+        { bootStrapIcon: 'mockIcon5', url: 'mockUrl5' }
+    ];
+
+    it('renders correct numbered circle fill icon when prop sample URL link has 0 length', () => {
         const emptySampleUrlLinkMock = [];
 
         render(<DropdownMenu sampleUrlLink={emptySampleUrlLinkMock} />);
-        const BSIcon = document.querySelector('i[class*="bi-0-circle-fill"]');
+        const BSIcon = document.querySelector('button > i');
+        expect(BSIcon.className).toContain('bi-0-circle-fill');
+    });
 
-        expect(BSIcon).toBeTruthy();
+    it('renders 3 numbered circle fill icons when prop sample URL link has 3 length', () => {
+        const threeSampleUrlLinkMock = [sampleUrlLinkMock[0], sampleUrlLinkMock[1], sampleUrlLinkMock[2]];
+
+        render(<DropdownMenu sampleUrlLink={threeSampleUrlLinkMock} />);
+        const BSIcon = document.querySelector('button > i');
+        expect(BSIcon.className).toContain('bi-3-circle-fill');
+    });
+
+    it('renders 5 numbered circle fill icons when prop sample URL link has 5 length', () => {
+        const fiveSampleUrlLinkMock = [sampleUrlLinkMock[0], sampleUrlLinkMock[1], sampleUrlLinkMock[2],
+        sampleUrlLinkMock[3], sampleUrlLinkMock[4]];
+
+        render(<DropdownMenu sampleUrlLink={fiveSampleUrlLinkMock} />);
+        const BSIcon = document.querySelector('button > i');
+        expect(BSIcon.className).toContain('bi-5-circle-fill');
     });
 });
